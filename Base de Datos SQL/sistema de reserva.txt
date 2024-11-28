@@ -1,0 +1,36 @@
+CREATE DATABASE IF NOT EXISTS sistema_reservas;
+USE sistema_reservas;
+
+CREATE TABLE Sedes (
+    id_sede INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_sede VARCHAR(100) NOT NULL,
+    capacidad_maxima INT NOT NULL,
+    horario_apertura TIME NOT NULL,
+    horario_cierre TIME NOT NULL
+);
+
+CREATE TABLE Clientes (
+    id_cliente INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    telefono VARCHAR(15) NOT NULL
+);
+
+CREATE TABLE Reservas (
+    id_reserva INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    id_sede INT,
+    fecha DATE NOT NULL,
+    hora_ingreso TIME NOT NULL,
+    num_acompanantes INT NOT NULL,
+    FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_sede) REFERENCES Sedes(id_sede) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Disponibilidad (
+    id_disponibilidad INT AUTO_INCREMENT PRIMARY KEY,
+    id_sede INT,
+    fecha DATE NOT NULL,
+    personas_reservadas INT NOT NULL,
+    FOREIGN KEY (id_sede) REFERENCES Sedes(id_sede) ON DELETE CASCADE ON UPDATE CASCADE
+);
