@@ -1,0 +1,76 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+}
+
+h2 {
+    color: #007bff;
+    font-weight: 600;
+}
+
+.form-control, .form-select {
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+button {
+    font-size: 1.1rem;
+    padding: 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.table {
+    border-radius: 5px;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table th, .table td {
+    text-align: center;
+    padding: 12px;
+    vertical-align: middle;
+}
+
+.table-dark th {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.table-bordered {
+    border: 1px solid #ddd;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.table tbody tr:hover {
+    background-color: #e9ecef;
+    cursor: pointer;
+}
+
+.rounded-blur-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;  /* Ajusta el ancho según lo necesites */
+    padding: 20px;
+    border-radius: 15px; /* Bordes redondeados */
+    overflow: hidden;
+    background: url(../recursos/R.jfif) no-repeat center center / cover; /* Imagen de fondo */
+    backdrop-filter: blur(10px); /* Desenfoque del fondo */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidad con Safari */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para un mejor efecto visual */
+    text-align: center;
+}
